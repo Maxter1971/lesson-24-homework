@@ -34,11 +34,12 @@ export class Parallel {
       tmpIndexes.push(nextIndex);
       nextIndex++;
     }
+    let i = 0;
     while (tmpTasks.length) {
       const task: Promise<number> = (await PromiseExt.whenAny(tmpTasks))[0];
       const index = tmpTasks.indexOf(task);
       tmpTasks.splice(index, 1);
-      const originalIndex = tmpIndexes[index];
+      const originalIndex = i;
       tmpIndexes.splice(index, 1);
       try {
         result[originalIndex] = await task;
@@ -50,6 +51,7 @@ export class Parallel {
         tmpIndexes.push(nextIndex);
         nextIndex++;
       }
+      i++;
     }
 
     return result;

@@ -1,4 +1,4 @@
-export const summator = function (...args: any) {
+export const summator = function (...args: any): Function {
   const sum = args.reduce((a: number, b: number) => a + b, 0);
 
   const func = (...newargs: number[] | []) => {

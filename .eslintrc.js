@@ -18,6 +18,7 @@ module.exports = {
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/arrow-body-style": "off",
+    "@typescript-eslint/no-empty-function": "off",
     "no-await-in-loop": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "no-promise-executor-return": "off",
